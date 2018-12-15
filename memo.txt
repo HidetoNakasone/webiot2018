@@ -1,0 +1,15 @@
+
+// sqlメモ
+
+create database webiot2018;
+
+use webiot2018;
+
+// drop table posts;
+
+create table posts (
+  id int(10) auto_increment,
+  msg varchar(255),
+  uptime datetime,
+  primary key(id)
+);

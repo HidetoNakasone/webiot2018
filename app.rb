@@ -24,7 +24,8 @@ require 'sinatra/reloader'
 # ======================
 
 get '/' do
-  erb :index
+  # erb :index
+  erb :index_dev
 end
 
 

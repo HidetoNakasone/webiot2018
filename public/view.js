@@ -1,20 +1,16 @@
 window.onload = function () {
+  var temp = "テスト"
 
   setInterval(function() {
     $.ajax({
       type: 'get',
       url: 'http://192.168.11.30:4567/get_msg',
-      // url: 'http://localhost:4567/get_msg',
       dataType: 'json',
       success: function(json) {
-        // $('#result').append('<p>' + json.hoge + '</p>');
-        // document.write(json.hoge);
-        // result.innerHTML = '<h1>' + json + '</h1>'
 
-        // console.log(json)
         for (var item in json) {
-          // console.log(json[item]["id"])
-          result.innerHTML = '<h1>' + json[item]["msg"] + '</h1>'
+          result.innerHTML = '<h1>' + json[item]["msg"] + "： " + json[item]["dateinfo"] + '</h1>'
+          temp = json[item]["msg"]
         }
 
       },
@@ -25,7 +21,5 @@ window.onload = function () {
       }
     });
   }, 500);
-
-
 
 }
