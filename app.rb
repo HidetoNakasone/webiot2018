@@ -1,15 +1,15 @@
 
 require 'sinatra'
 require 'sinatra/reloader'
-require "json"
+# require "json"
 
 # require "mysql2"
 # require "mysql2-cs-bind"
 
 
-json_path = File.dirname(__FILE__) + '/data/data.json'
+# json_path = File.dirname(__FILE__) + '/data/data.json'
 
-enable :sessions
+# enable :sessions
 
 # ======================
 

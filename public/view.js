@@ -4,7 +4,6 @@ window.onload = function () {
     $.ajax({
       type: 'get',
       url: 'http://localhost:4567/get_msg',
-      // url: 'https://webiot2018.herokuapp.com/get_msg',
       dataType: 'json',
       success: function(json) {
         // $('#result').append('<p>' + json.hoge + '</p>');

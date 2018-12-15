@@ -15,6 +15,7 @@ recognition.addEventListener('result', function(event){
     dataType: 'json',
     success: function(json) {
       $('#result').append('<p>' + json.msg + '</p>');
+    },
     error: function() {
       $('#result').append('error');
     }
