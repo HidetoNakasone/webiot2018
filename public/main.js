@@ -9,13 +9,12 @@ recognition.addEventListener('result', function(event){
 //
   $.ajax({
     type: 'get',
-    url: 'http://localhost:4568/set_msg/' + text,
+    url: 'http://localhost:4567/set_msg/' + text,
     // url: 'https://webiot2018.herokuapp.com/get_msg' + text,
 
     dataType: 'json',
     success: function(json) {
       $('#result').append('<p>' + json.msg + '</p>');
-    },
     error: function() {
       $('#result').append('error');
     }

@@ -8,10 +8,14 @@ window.onload = function () {
       dataType: 'json',
       success: function(json) {
         // $('#result').append('<p>' + json.hoge + '</p>');
-        document.write(json.hoge);
+        // document.write(json.hoge);
         // result.innerHTML = '<h1>' + json + '</h1>'
 
-        // result.innerHTML = '<h1>' + json[json.length - 1].msg + '</h1>'
+        // console.log(json)
+        for (var item in json) {
+          // console.log(json[item]["id"])
+          result.innerHTML = '<h1>' + json[item]["msg"] + '</h1>'
+        }
 
       },
       error: function() {
@@ -20,7 +24,7 @@ window.onload = function () {
         result.innerHTML = '<h1>error</h1>'
       }
     });
-  }, 100);
+  }, 500);
 
 
 
