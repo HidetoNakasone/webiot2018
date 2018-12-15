@@ -13,3 +13,34 @@ create table posts (
   uptime datetime,
   primary key(id)
 );
+
+create table menus (
+  id int(10) auto_increment,
+  name varchar(255),
+  kane int(10),
+  primary key(id)
+);
+
+insert into menus values
+(null, "コーヒー_アイス", 100),
+(null, "コーヒー_ホット", 100),
+(null, "紅茶_アイス", 100),
+(null, "紅茶_ホット", 100),
+(null, "タピオカドリンク", 150),
+(null, "コーラ", 100),
+(null, "カルボナーラ", 450),
+(null, "イカツナサラダ", 250),
+(null, "シーザーサラダ", 250),
+(null, "エスカルゴ", 400),
+(null, "コロッケ", 50),
+(null, "マルゲリータ", 450),
+(null, "オムライス", 350),
+(null, "お子様セット", 320),
+(null, "ランチセット", 500),
+(null, "ホットドック", 200),
+(null, "玉子スープ", 150),
+(null, "アイスクリーム", 100),
+(null, "チーズケーキ", 150),
+(null, "チョコレートケーキ", 150),
+(null, "アップルパイ", 150),
+(null, "かぼちゃのタルト", 150);

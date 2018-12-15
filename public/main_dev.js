@@ -30,11 +30,11 @@ function vr_function() {
       {
         document.getElementById('result_text').innerHTML = results[i][0].transcript;
 
-        // 読み上げ
+        // // 読み上げ
         var text = results[i][0].transcript;
-        const uttr = new SpeechSynthesisUtterance(text)
-        uttr.pitch = 1.4
-        speechSynthesis.speak(uttr)
+        // const uttr = new SpeechSynthesisUtterance(text)
+        // uttr.pitch = 1.4
+        // speechSynthesis.speak(uttr)
 
         // ajax
         $.ajax({
@@ -42,8 +42,15 @@ function vr_function() {
           url: 'http://192.168.11.30:4567/set_msg/' + text,
           dataType: 'json',
           success: function(json) {
+            console.log(json.msg)
+            // 読み上げ
+            const uttr = new SpeechSynthesisUtterance(json.msg)
+            uttr.pitch = 1.5
+            speechSynthesis.speak(uttr)
+
           },
-          error: function() {
+          error: function(json) {
+            console.log("ajaxエラー")
           }
         });
 
