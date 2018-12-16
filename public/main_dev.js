@@ -1,4 +1,8 @@
 
+window.onload = function(){
+  vr_function()
+};
+
 var flag_speech = 0;
 
 function vr_function() {
@@ -26,27 +30,30 @@ function vr_function() {
   recognition.onresult = function(event) {
     var results = event.results;
     for (var i = event.resultIndex; i < results.length; i++) {
+
       if (results[i].isFinal)
       {
         document.getElementById('result_text').innerHTML = results[i][0].transcript;
 
-        // // 読み上げ
         var text = results[i][0].transcript;
-        // const uttr = new SpeechSynthesisUtterance(text)
-        // uttr.pitch = 1.4
-        // speechSynthesis.speak(uttr)
 
         // ajax
         $.ajax({
           type: 'get',
           url: 'http://192.168.11.30:4567/set_msg/' + text,
+          // url: 'http://192.168.0.3:4567/set_msg/' + text,
           dataType: 'json',
           success: function(json) {
             console.log(json.msg)
             // 読み上げ
             const uttr = new SpeechSynthesisUtterance(json.msg)
-            uttr.pitch = 1.5
+            uttr.pitch = 1.4
+            uttr.rate = 1.1
             speechSynthesis.speak(uttr)
+
+            uttr.onboundary = function(event) {
+              vr_function();
+            }
 
           },
           error: function(json) {
@@ -54,7 +61,8 @@ function vr_function() {
           }
         });
 
-        vr_function();
+        // vr_function();
+
       }
       else
       {

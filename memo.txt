@@ -21,9 +21,10 @@ create table menus (
   primary key(id)
 );
 
+// 玉子スープを、卵スープと認識してしまうので、追加している。
 insert into menus values
-(null, "コーヒー_アイス", 100),
-(null, "コーヒー_ホット", 100),
+(null, "アイスコーヒー", 100),
+(null, "ホットコーヒー", 100),
 (null, "紅茶_アイス", 100),
 (null, "紅茶_ホット", 100),
 (null, "タピオカドリンク", 150),
@@ -39,8 +40,17 @@ insert into menus values
 (null, "ランチセット", 500),
 (null, "ホットドック", 200),
 (null, "玉子スープ", 150),
+(null, "卵スープ", 150),
 (null, "アイスクリーム", 100),
 (null, "チーズケーキ", 150),
 (null, "チョコレートケーキ", 150),
 (null, "アップルパイ", 150),
 (null, "かぼちゃのタルト", 150);
+
+// 注文ログ
+create table ate (
+  id int(10) auto_increment,
+  name varchar(255),
+  kane int(10),
+  primary key(id)
+);
