@@ -4,9 +4,9 @@ window.onload = function () {
   setInterval(function() {
     $.ajax({
       type: 'get',
-      // url: 'http://192.168.11.30:4567/get_msg',
+      url: 'https://192.168.11.30:4567/get_msg',
       // url: 'http://192.168.0.3:4567/get_msg',
-      url: 'http://192.168.11.52:4567/get_msg',
+      // url: 'http://192.168.11.52:4567/get_msg',
       dataType: 'json',
       success: function(json) {
 
