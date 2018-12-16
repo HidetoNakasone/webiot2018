@@ -11,6 +11,13 @@ require 'sinatra/reloader'
 
 # enable :sessions
 
+
+before do
+  headers 'Access-Control-Allow-Origin' => '*'
+  headers 'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept'
+end
+
+
 # ======================
 
 # client = Mysql2::Client.new(
