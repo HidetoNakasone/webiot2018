@@ -40,8 +40,9 @@ function vr_function() {
         // ajax
         $.ajax({
           type: 'get',
-          url: 'http://192.168.11.30:4567/set_msg/' + text,
+          // url: 'http://192.168.11.30:4567/set_msg/' + text,
           // url: 'http://192.168.0.3:4567/set_msg/' + text,
+          url: 'http://192.168.11.52:4567/set_msg/' + text,
           dataType: 'json',
           success: function(json) {
             console.log(json.msg)
